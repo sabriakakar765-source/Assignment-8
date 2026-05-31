@@ -4,8 +4,183 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment 8</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
 </head>
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="#"> KARA MOOD </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMenu">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#home"> Home </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#products"> Products </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about"> About </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#cart"> Cart </a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact"> Contact </a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <section id="home">
+        <div class="hero">
+            <div class="container text-center">
+                <h1>KARA MOOD</h1>
+                <p>Elegant Fashion Collection 2026</p>
+                <a href="#products" class="btn btn-gold"> Shop Now </a>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5">
+        <div id="fashionSlider" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="images/photo_2026-05-31_14-10-23.jpg" alt="Fashion slide 1" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/photo_2026-05-31_14-10-29.jpg" alt="Fashion slide 2" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="images/photo_2026-05-31_14-10-37.jpg" alt="Fashion slide 3" class="d-block w-100">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-5">
+                <input type="text" id="search" class="form-control" placeholder="Search Products">
+            </div>
+            <div class="col-md-4">
+                <select  id="category" class="form-select">
+                    <option value="all">All Categories</option>
+                    <option value="Dress">Dress</option>
+                    <option value="Abaya">Abaya</option>
+                    <option value="Premium">Premium</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <button class="btn btn-dark w-100" onclick="togglerDarkMode">Dark Mode</button>
+            </div>
+        </div>
+    </section>
+    <section id="products" class="container my-5">
+        <div class="text-center mb-5">
+            <h2>Our Collection</h2>
+        </div>
+        <div class="row" id="products-list">
+            <img src="images/photo_2026-05-31_14-12-48.jpg" alt="Summer dress" class="h-50">
+            <img src="images/photo_2026-05-31_14-12-52.jpg" alt="Summer dress">
+
+        </div>
+    </section>
+    <section id="about" class="container my-5">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="images/photo_2026-05-31_14-10-49.jpg" alt="About Kara Mood" class="img-fluid rounded">
+            </div>
+            <div class="col-lg-6">
+                <h2>About Kara Mood</h2>
+                <p>Kara Mood is a modern fashion brand specializing in elegant women's clothing, Premium collections and timeless
+                    style.
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="cart" class="container my-5">
+        <h2 class="mb-4"> Shopping Cart </h2>
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Products</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-items"></tbody>
+            </table>
+        </div>
+        <h4>Total:
+            <span id="cart-total">0$</span>
+        </h4>
+    </section>
+    <section id="checkout" class="container my-5">
+        <h2 class="mb-4">Checkout</h2>
+        <form id="checkoutForm">
+            <div class="mb-3">
+                <input type="text" id="name" class="form-control" placeholder="Full Name">
+            </div>
+            <div class="mb-3">
+                <input type="email" id="email" class="form-control" placeholder="Email">
+            </div>
+            <div class="mb-3">
+                <input type="text" id="address" class="form-control" placeholder="Address">
+            </div>
+            <div class="mb-3">
+                <select class="form-select" id="payment">
+                    <option>
+                        Cash
+                    </option>
+                    <option>
+                        Credit Card
+                    </option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success"> Place Order </button>
+        </form>
+    </section>
+    <section id="contact" class="container my-5">
+        <h2> Contact Us </h2>
+        <form id="contactForm">
+            <div class="mb-3">
+                <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+                <input type="email" class="form-control" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+                <textarea class="form-control" rows="5" placeholder="Message"></textarea>
+            </div>
+            <button class="btn btn-primary">Send Message</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="container text-center">
+            <p>Kara Mood 2026</p>
+            <div>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-tiktok"></i>
+            </div>
+        </div>
+    </footer>
+    <div class="model fade" id="productModel">
+        <div class="model-dialog">
+            <div class="model-content">
+                <div class="model-header">
+                    <h5 id="modelTitle"></h5>
+                    <button class="btn-close" data-bs-dismiss="model"></button>
+                </div>
+                <div class="model-body">
+                    <img id="modelImage" class="img-fluid mb-3">
+                    <p id="modelDescription"></p>
+                    <p id="modelPrice"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bootstrap-5.3.8-dist/bootstrap-5.3.8-dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>
